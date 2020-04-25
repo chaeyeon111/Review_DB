@@ -41,15 +41,22 @@ router.get('/list/:page', function(req, res, next) {
     conn.query(sql, function (err, rows) {
         // rows = class
         if (err) console.error("err : " + err);
-        res.render('list', {title: 'Movie Reviews!', rows: rows});
+        // res.render('list', {title: 'Movie Reviews!', rows: rows});
+        res.json(rows);
+        res.send(json);
+        const i = JSON.stringify(json);
+        res.redirect(i);
+
+
     });
 
-        res.json(rows);
-        var idx = rows[0].idx;
-        var title = rows[1].title;
-        var name = rows[2].name;
-        var content = rows[3].content;
-        var date_format = rows[4].dateFormat;
+        // res.json(rows);
+        // var idx = rows[0].idx;
+        // var title = rows[1].title;
+        // var name = rows[2].name;
+        // var content = rows[3].content;
+        // var date_format = rows[4].dateFormat;
+
 
 });
 
