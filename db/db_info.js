@@ -2,9 +2,9 @@
 module.exports = (function () {
     return {
         local: {
-            host: 'localhost',
+            host: 'database.cfxizsz1qcmu.ap-southeast-1.rds.amazonaws.com',
             port: '3306',
-            user: 'root',
+            user: 'admin',
             password: '12345678',
             database: 'nodedb'
         },
