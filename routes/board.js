@@ -43,9 +43,9 @@ router.get('/list/:page', function(req, res, next) {
         if (err) console.error("err : " + err);
         // res.render('list', {title: 'Movie Reviews!', rows: rows});
         res.json(rows);
-        res.send(json);
-        const i = JSON.stringify(json);
-        res.redirect(i);
+        //res.send(json);
+        //const i = JSON.stringify(json);
+        //res.redirect(i);
 
 
     });
