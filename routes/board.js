@@ -69,12 +69,16 @@ router.get('/write', function(req,res,next){
     res.render('write',{title : "Write Your Movie Review"});
 });
 
+
+
+
 router.post('/write', function(req,res,next){
     var name = req.body.name;
     var title = req.body.title;
     var content = req.body.content;
     var passwd = req.body.password;
     var datas = [name,title,content,passwd];
+
 
     var sql = "insert into board(name, title, content, date, modidate, password,hit) values(?,?,?,now(),now(),?,0)";
     conn.query(sql,datas, function (err, rows) {
@@ -109,6 +113,8 @@ router.get('/read/:idx',function(req,res,next)
         res.render('read', {title:"Detail", row:rows[0]});
     });
 });
+
+
 
 router.post('/update',function(req,res,next)
 {
